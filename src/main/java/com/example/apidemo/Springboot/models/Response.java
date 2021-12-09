@@ -37,4 +37,13 @@ public class Response {
     public void setData(Object data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "status='" + status + '\'' +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }
