@@ -5,8 +5,10 @@ import com.example.apidemo.Springboot.models.Account;
 import com.example.apidemo.Springboot.models.Response;
 import com.example.apidemo.Springboot.repos.AccountRepos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-
+@Primary
 public class AccountServices implements AccountServicesInterface {
     @Autowired
     private AccountRepos repository;
@@ -34,7 +36,7 @@ public class AccountServices implements AccountServicesInterface {
             return new Response("Ok", "Truy Van Thanh Cong", dataAccount);
 
         } else {
-            return new Response("False", "Truy Van That Bai", "");
+            return new Response("False", "Accoun Service", "");
         }
     }
 
