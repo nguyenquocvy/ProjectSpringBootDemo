@@ -1,6 +1,7 @@
 package com.example.apidemo.Springboot.ServicesInterface;
 
 import com.example.apidemo.Springboot.models.Account;
+import com.example.apidemo.Springboot.models.AccountDto;
 import com.example.apidemo.Springboot.models.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ public interface AccountServicesInterface {
     public abstract Response findId(@PathVariable Integer id);
 
     // create new account
-    public  abstract ResponseEntity<Response> createAccount(@RequestBody Account newAccount);
+    public  abstract ResponseEntity<Response> createAccount(@RequestBody AccountDto newAccount);
 
     //update password account
     public abstract Response updateAccount(@RequestBody Account newAccount, @PathVariable Integer id);

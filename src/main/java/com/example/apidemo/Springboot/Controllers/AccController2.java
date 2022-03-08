@@ -2,12 +2,15 @@ package com.example.apidemo.Springboot.Controllers;
 
 import com.example.apidemo.Springboot.ServicesInterface.AccountServicesInterface;
 import com.example.apidemo.Springboot.models.Account;
+import com.example.apidemo.Springboot.models.AccountDto;
 import com.example.apidemo.Springboot.models.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,7 +36,7 @@ public class AccController2{
 
     //CREATE
     @PostMapping("/insert")
-    protected ResponseEntity<Response> createAccount(@RequestBody Account newAccount) {
+    protected ResponseEntity<Response> createAccount(@RequestBody @Valid AccountDto newAccount) {
         return this.accInter.createAccount(newAccount);
     }
 

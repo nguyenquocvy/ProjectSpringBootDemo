@@ -16,6 +16,12 @@ public class SpringbootApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(SpringbootApplication.class, args);
+
+		Double a = Double.valueOf(20);
+		double b = 20;
+		Double c = Double.valueOf(20);
+
 	}
+
 
 }
